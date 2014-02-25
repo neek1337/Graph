@@ -2,7 +2,7 @@ package ru.sgu.csit.csc.graphs;
 
 
 import ru.sgu.csit.csc.graphs.algorithms.TreePaths;
-import ru.sgu.csit.csc.graphs.algorithms.impl.Bfsimpl;
+import ru.sgu.csit.csc.graphs.algorithms.impl.BfsImpl;
 
 /**
  * Created by neek on 16.02.14.
@@ -20,7 +20,7 @@ public class Test {
             System.out.print(it + " ");
         }
         System.out.println();
-        TreePaths treePaths = new Bfsimpl().run(graph, 0);
+        TreePaths treePaths = new BfsImpl().run(graph, 0);
         System.out.println();
         for (Integer it : treePaths.getPath(1)) {
             System.out.print(it + " ");

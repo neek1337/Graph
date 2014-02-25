@@ -5,10 +5,11 @@ import ru.sgu.csit.csc.graphs.algorithms.Bfs;
 import ru.sgu.csit.csc.graphs.algorithms.TreePaths;
 
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class Bfsimpl implements Bfs {
+public class BfsImpl implements Bfs {
 
     public TreePaths run(final Graph graph, final int sourceVertex) {
         int[] distance = new int[graph.getVertexCount()];
@@ -19,16 +20,16 @@ public class Bfsimpl implements Bfs {
         }
         distance[sourceVertex] = 0;
         parents[sourceVertex] = sourceVertex;
-        Queue<Integer> priorityQueue = new PriorityQueue<Integer>();
-        priorityQueue.add(sourceVertex);
-        while (!priorityQueue.isEmpty()) {
-            int v = priorityQueue.poll();
+        Queue<Integer> linkedList = new LinkedList<Integer>();
+        linkedList.add(sourceVertex);
+        while (!linkedList.isEmpty()) {
+            int v = linkedList.poll();
 
             for (Integer u : graph.getNeighbors(v)) {
                 if (distance[u] == Integer.MAX_VALUE) {
                     distance[u] = distance[v] + 1;
                     parents[u] = v;
-                    priorityQueue.add(u);
+                    linkedList.add(u);
                 }
             }
         }
