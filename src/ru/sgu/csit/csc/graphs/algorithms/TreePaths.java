@@ -26,9 +26,8 @@ public class TreePaths {
         return parents[vertex];
     }
 
-    public List<Integer> getPath(int targetVertex) {
+    public List<Integer> getPath(int vertex) {
         List<Integer> list = new ArrayList<Integer>();
-        int vertex = targetVertex;
         list.add(vertex);
         while (parents[vertex] != vertex) {
             vertex = parents[vertex];

@@ -7,9 +7,9 @@ public class AdjacencyMatrixGraph extends BaseGraph {
     private final boolean adjacencyMatrix[][];
 
 
-    AdjacencyMatrixGraph(int VertexCount, Graph.Type type) {
-        super(VertexCount, type);
-        this.adjacencyMatrix = new boolean[VertexCount][VertexCount];
+    AdjacencyMatrixGraph(int vertexCount, Graph.Type type) {
+        super(vertexCount, type);
+        this.adjacencyMatrix = new boolean[vertexCount][vertexCount];
     }
 
     public boolean addEdge(int from, int to) {
@@ -50,7 +50,7 @@ public class AdjacencyMatrixGraph extends BaseGraph {
                     }
 
                     public void remove() {
-                        // TODO Auto-generated method stub
+                        throw new UnsupportedOperationException("Remove operation is not supported.");
                     }
                 };
             }
